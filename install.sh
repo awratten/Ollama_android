@@ -22,7 +22,7 @@ curl -L "https://ollama.com/download/ollama-linux-${ARCH}.tar.zst" -o /tmp/ollam
 # Termux usually needs zstd
 pkg install -y zstd tar
 
-zstd -d /tmp/ollama.tar.zst | tar -xf - -C "$INSTALL_DIR"
+zstd -d $PREFIX/tmp/ollama.tar.zst | tar -xf - -C "$INSTALL_DIR"
 
 echo "Linking binary..."
 ln -sf "$INSTALL_DIR/ollama" "$BIN_DIR/ollama"
